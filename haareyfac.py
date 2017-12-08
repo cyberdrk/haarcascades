@@ -33,7 +33,7 @@ import cv2
 
 
 #multiple cascades: https://github.com/Itseez/opencv/tree/master/data/haarcascades
-1
+
 #https://github.com/Itseez/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml
 
 
