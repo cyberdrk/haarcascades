@@ -31,7 +31,7 @@
 import numpy as np
 import cv2
 
-
+#Written with help from the tutorial on haar cascades on pythonprogramming.net by sentdex
 #multiple cascades: https://github.com/Itseez/opencv/tree/master/data/haarcascades
 
 #https://github.com/Itseez/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml
