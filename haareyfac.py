@@ -30,15 +30,12 @@
 
 import numpy as np
 import cv2
-import serial
-import time
+
 
 #multiple cascades: https://github.com/Itseez/opencv/tree/master/data/haarcascades
 1
 #https://github.com/Itseez/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml
-PORT = "COM3"
-BAUD_RATE = 9600 	#This depends on your microprocessor's clock frequency
-ser = serial.Serial(PORT, BAUD_RATE)
+
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 #https://github.com/Itseez/opencv/blob/master/data/haarcascades/haarcascade_eye.xml
@@ -51,9 +48,6 @@ while True:
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = face_cascade.detectMultiScale(gray, 1.3, 5) #The figures 1.3 and 5 depend on the size of the image and the likelihood of finding a face in the image
 
-        if(len(faces)!=0):
-                ser.write("7")
-                #ser.write("5")
 
 
         for(x, y, w, h) in faces: #x, y Cartesian Co-ordinates, width and height
@@ -73,7 +67,6 @@ while True:
         if k == 27:
                 break
 
-#ser.close()
 
 cap.release()
 cv2.destroyAllWindows()
